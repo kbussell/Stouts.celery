@@ -20,6 +20,9 @@ celery_run:                                           # Start celery. See defaul
                                                       # - { action: worker, opts: '--settings=settings.local' }
 
 celery_concurrency: 1                                 # Set default concurence level
+celery_upstart_env: {}                                # Extra env variables for upstart script. Ex:
+                                                      # celery_upstart_env:
+                                                      #   DJANGO_SETTINGS_MODULE: my_settings.local_settings
 
 # Directories
 celery_prefix: "{{deploy_dir|default('/usr/lib/' + celery_app_name)}}" # Set to installation prefix
